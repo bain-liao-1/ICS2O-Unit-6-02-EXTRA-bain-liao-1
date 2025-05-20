@@ -15,30 +15,31 @@ if (navigator.serviceWorker) {
   })
 }
 
-const userAge = document.getElementById('user-age').value
-let savedUserAge = sessionStorage.getItem('userAge') ? Number(sessionStorage.getItem('userAge')) : null
+/**
+ * This function conducts multiplication with addition.
+ */
+function multiplyThroughAddition() {
+  const factor = parseInt(document.getElementById("factor").value)
+  let multiplier = parseInt(document.getElementById("multiplier").value)
+  let product = 0
 
-// If savedUserAge is not inputed, don't display it
-if (savedUserAge ==! null) {
-  document.getElementById('result').innerHTML = '<p>Your age is: ' + savedUserAge + '</p>';
+  // Perform multiplication using addition
+  while (multiplier > 0) {
+    product += factor
+    multiplier -= 1
+  }
+
+  // Save the product in sessionStorage
+  sessionStorage.setItem('product', product)
+
+  // Display the result
+  document.getElementById("result").innerText = "The product is " + product + "."
 }
 
-/**
- * This function checks the user's age.
- */
-function ageCheck() {
-  // Check the user's age
-  if (userAge >= 17) {
-    document.getElementById('result').innerHTML =
-      '<p>You can go see an R rated movie alone.</p>'
-  } else if (userAge >= 13) {
-    document.getElementById('result').innerHTML =
-      '<p>You can go see a PG-13 movie alone.</p>'
-  } else if (userAge >= 5) {
-    document.getElementById('result').innerHTML =
-      '<p>You can go see a G or PG movie alone.</p>'
-  } else {
-    document.getElementById('result').innerHTML =
-      '<p>You are too young to see most things.</p>'
+// On page load, check and display the product if it exists
+window.onload = function() {
+  if (sessionStorage.getItem('product')) {
+    const savedProduct = sessionStorage.getItem('product')
+    document.getElementById("result").innerText = "The product is " + savedProduct + "."
   }
 }

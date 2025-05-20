@@ -24,6 +24,9 @@ function ageCheck() {
   if (userAge === null) {
     userAge = parseInt(document.getElementById('user-age').value)
     sessionStorage.setItem('userAge', userAge)
+  } else {
+    userAge = parseInt(document.getElementById('user-age').value)
+    sessionStorage.setItem('userAge', userAge)
   }
 
   // Check the user's age

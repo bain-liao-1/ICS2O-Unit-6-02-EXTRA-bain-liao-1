@@ -1,0 +1,28 @@
+{
+  "name": "Bain's App",
+  "short_name": "Bain's App",
+  "description": "Github Page for Bain's App",
+  "scope": "/ICD2O-Unit-6-02-EXTRA-bain-liao-1/",
+  "start_url": "/ICD2O-Unit-6-02-EXTRA-bain-liao-1/",
+  "permissions": [ 
+    "unlimitedStorage",
+    "fullscreen"
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone", 
+  "icons": [
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

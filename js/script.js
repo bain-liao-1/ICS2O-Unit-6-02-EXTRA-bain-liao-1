@@ -17,18 +17,19 @@ if (navigator.serviceWorker) {
 
 let userAge = sessionStorage.getItem('userAge') ? Number(sessionStorage.getItem('userAge')) : null
 
-/**
- * This function checks and updates the user's age in sessionStorage.
- */
-function ageCheck() {
   if (userAge === null) {
     userAge = parseInt(document.getElementById('user-age').value)
     sessionStorage.setItem('userAge', userAge)
   } else {
     userAge = parseInt(document.getElementById('user-age').value)
     sessionStorage.setItem('userAge', userAge)
+    document.getElementById('result').innerHTML = '<p>Your age is: ' + userAge
   }
 
+/**
+ * This function checks the user's age.
+ */
+function ageCheck() {
   // Check the user's age
   if (userAge >= 17) {
     document.getElementById('result').innerHTML =

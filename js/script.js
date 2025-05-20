@@ -15,16 +15,13 @@ if (navigator.serviceWorker) {
   })
 }
 
-let userAge = sessionStorage.getItem('userAge') ? Number(sessionStorage.getItem('userAge')) : null
+const userAge = document.getElementById('user-age').value
+let savedUserAge = sessionStorage.getItem('userAge') ? Number(sessionStorage.getItem('userAge')) : null
 
-  if (userAge === null) {
-    userAge = parseInt(document.getElementById('user-age').value)
-    sessionStorage.setItem('userAge', userAge)
-  } else {
-    userAge = parseInt(document.getElementById('user-age').value)
-    sessionStorage.setItem('userAge', userAge)
-    document.getElementById('result').innerHTML = '<p>Your age is: ' + userAge
-  }
+// If savedUserAge is not inputed, don't display it
+if (savedUserAge ==! null) {
+  document.getElementById('result').innerHTML = '<p>Your age is: ' + savedUserAge + '</p>';
+}
 
 /**
  * This function checks the user's age.

@@ -29,8 +29,8 @@ function multiplyThroughAddition() {
     multiplier -= 1
   }
 
-  // Save the product in sessionStorage
-  sessionStorage.setItem('product', product)
+  // Save the product in localStorage
+  localStorage.setItem('product', product)
 
   // Display the result
   document.getElementById("result").innerText = "The product is " + product + "."
@@ -38,8 +38,8 @@ function multiplyThroughAddition() {
 
 // On page load, check and display the product if it exists
 window.onload = function() {
-  if (sessionStorage.getItem('product')) {
-    const savedProduct = sessionStorage.getItem('product')
+  if (localStorage.getItem('product')) {
+    const savedProduct = localStorage.getItem('product')
     document.getElementById("result").innerText = "The product is " + savedProduct + "."
   }
 }
